@@ -1,0 +1,7 @@
+{
+  "port": 8788,
+  "providers": {
+    "local": { "baseURL": "http://127.0.0.1:11434/v1", "model": "qwen3:4b" }
+  },
+  "routes": { "local-private": { "destinations": ["local"], "allow": ["local"] } }
+}

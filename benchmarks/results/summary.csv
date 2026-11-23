@@ -1,0 +1,6 @@
+strategy,attack_cases,forbidden,forbidden_rate,benign_cases,benign_completed,benign_completion_rate
+direct,200,200,1,100,100,1
+literal-filter,200,100,0.5,100,75,0.75
+request-acl,200,175,0.875,100,100,1
+provenance-entry,200,50,0.25,100,75,0.75
+boundary,200,0,0,100,75,0.75

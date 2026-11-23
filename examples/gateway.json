@@ -1,0 +1,7 @@
+{
+  "port": 8788,
+  "providers": {
+    "dot": { "baseURL": "https://api.usedot.xyz/agent/v1", "model": "dot-uncensored-obli-24B", "apiKeyEnv": "DOT_API_KEY" }
+  },
+  "routes": { "dot-private": { "destinations": ["dot"], "allow": ["dot"], "retries": 0 } }
+}

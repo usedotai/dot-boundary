@@ -1,0 +1,542 @@
+{
+  "generated_at": "2026-11-23T16:45:04.565842+00:00",
+  "reference_commit": "f083b6b396399d3b3c7f2ddaf613a5945eaf32d8",
+  "scope": "Capability reader-set resolution on explicit data dependencies.",
+  "protocol": {
+    "correctness_cases": 4096,
+    "decisions_per_engine": 16384,
+    "independent_processes_per_engine": 5,
+    "samples_per_phase_per_depth": 30,
+    "warmup_per_phase": 30,
+    "global_warmup_cycles": 500,
+    "teardown": "result retained until after the timing stop; construction output validated outside timed region",
+    "checks_per_batch": 20,
+    "depths": [
+      0,
+      1,
+      8,
+      32,
+      128,
+      256
+    ],
+    "reference_source_modified": false,
+    "timing_excludes": "imports, process startup, LLM generation, network"
+  },
+  "source_hashes": {
+    "camel/src/camel/__init__.py": "7acc6d5259c7cd412044c9ac5e30f4edebe4ea8f67eda78a8d02ceba301e9111",
+    "camel/src/camel/capabilities/__init__.py": "11d1567103849c8d500805a365d2addbbe765e986cbccadcb5606ef616cf9ae6",
+    "camel/src/camel/capabilities/capabilities.py": "46a779a6eff0e3e7f35639abe5eff57b2afeee76e8cd02f60f547f56d07ef19f",
+    "camel/src/camel/capabilities/readers.py": "2a2fa5fac21f22f7904b687e6452209b6cbf8ff339d925f15c0ea829716b1aa0",
+    "camel/src/camel/capabilities/sources.py": "38ed50f59cb67bf3cad13226e03724e48f0d637a5b2e6569bf95caa9c674aa91",
+    "camel/src/camel/capabilities/utils.py": "f31b42f30fc83e265f11fcd46dbb559b2aa65310697ceee4c0247112d8e14766",
+    "camel/src/camel/chat_turn.py": "65e63edf5955214cc7065991862171cfe1542db6f2f1034a5e71982a7a824d63",
+    "camel/src/camel/conditional_cache.py": "b4056935ccaad83d05075b98c08a189741b36aecaeab6b5585afd02778858e51",
+    "camel/src/camel/count_tokens.py": "c510d1917cc9a078c461d3f8b503adb6b8be819bf7aa199f182ffde3ca6ed461",
+    "camel/src/camel/custom_yaml.py": "a25a9f68447ee0c3000510587e3f3e5cb456cd049580c4f647d8265ae4e967b2",
+    "camel/src/camel/interpreter/__init__.py": "84328a9f0b961888a87afdcad635aebfea4b73ba3f38a7fbd4e623fea5b2392c",
+    "camel/src/camel/interpreter/interpreter.py": "a3af5e3f2a3a06e0ae9635214710574b1740d6cab5c8e9d064c0f10bac0b86cb",
+    "camel/src/camel/interpreter/library.py": "990926c5565c61991b13d8819a047da1a7a9554295f60a73ea69e4cfab75a58d",
+    "camel/src/camel/interpreter/namespace.py": "39da459f0eafdb60a92ee666d7bacda7b693e0013f924954a9915756f25257ed",
+    "camel/src/camel/interpreter/op_protocols.py": "47c434f7713aabed73d20a80741f66781ceb2a0405cf581677a97c49221e3c83",
+    "camel/src/camel/interpreter/result.py": "ee5dc7682f4ce7e3815bcc7113b275f9209af31c2b1b3bcc1c82b255f93c4b41",
+    "camel/src/camel/interpreter/value.py": "5794214f0da39816324f5a76093d3fb3594f13aa502dade74d7473206af5ef19",
+    "camel/src/camel/models.py": "91afc7072a4aab0b0b1c3e3495e5ce68ed4598fd2d0e544216f916635548ffe1",
+    "camel/src/camel/pipeline_elements/__init__.py": "1360e1f84be2e819615d2f987182d90e000148d16b9df53aded65fecfb503023",
+    "camel/src/camel/pipeline_elements/agentdojo_function.py": "989e5fa3eba252a2a625dd08c833f4d333c0823fcebec5bcf7874cb3e754292d",
+    "camel/src/camel/pipeline_elements/anthropic_tool_filter.py": "1528569a046994f48c2f31d46e57acd8b4a16fb8445eeaf3e07f4f8df438b552",
+    "camel/src/camel/pipeline_elements/old_google_llm.py": "b7899d7fce998180e4d959780017774817671a14604054338b4638556ba71346",
+    "camel/src/camel/pipeline_elements/privileged_llm.py": "848982dc88dea51f15b454f119a8d775f76449ccddd892a208599c5899d58d75",
+    "camel/src/camel/pipeline_elements/replay_privileged_llm.py": "1e2dcafc237434bada4d57de1d3d8dc22e9e877b81dac451578ed7721cac61a5",
+    "camel/src/camel/pipeline_elements/security_policies/__init__.py": "6ab8a1b26af5fe915ac9e8323fdbc1fa3f2f301e0ee30f0d4030882660fc9136",
+    "camel/src/camel/pipeline_elements/security_policies/agentdojo_security_policies.py": "186f4f674ee2c06068df2d6cbfb9061f247d4501b5f0f10b2ddae4f26174b67d",
+    "camel/src/camel/pipeline_elements/security_policies/banking.py": "bfce5b74684ee3d25c8c843b761042329fc755bdeeca62551cead8d6a7313ebc",
+    "camel/src/camel/pipeline_elements/security_policies/slack.py": "5dba7d012d4c929cf464a7045a2f179f020206432b9e7f58a565929aa7bd5488",
+    "camel/src/camel/pipeline_elements/security_policies/travel.py": "871a1da8e9fa3c76bb155ce5bf9fb96aedc318760245a833b752d8611a506b34",
+    "camel/src/camel/pipeline_elements/security_policies/workspace.py": "d51428deb08ffbb242b0fbc4aaf6a082b3ac7c9a5434a490025aa6de6ab3f541",
+    "camel/src/camel/quarantined_llm.py": "95e62fca524fb18e830f00e95df7c68168fe0b8df2acb2785c4e775cbb1a8b42",
+    "camel/src/camel/security_policy.py": "e7a060e0192314613494d7a24ca660a39ddf5bdf0f0cc6300fb9bf3cd4dd5b65",
+    "camel/src/camel/system_prompt_generator.py": "88451b16e6893599a8883de5e53b5fa0349ab16c719991b56fb06163a18e2f4b",
+    "boundary/src/cli.mjs": "549ed1b94ad14fca2470bb8011980bec4facd857aee4edea0409cef9ffa70df5",
+    "boundary/src/errors.mjs": "22311cff96a01c699d059b0eb50a2468b77bfc69944969c39d27eea7ea938da2",
+    "boundary/src/gateway.mjs": "a149da327a6be48b38adbfc9f5dcf2f964b379102c20b39c61952dc02ea57db4",
+    "boundary/src/index.mjs": "5f6387ee41e0121d2148bf87299e989a1d1d57a8de2ede03011e10261396dd88",
+    "boundary/src/openai.mjs": "9b2fed78f66d4c522d663f16170d21240910032b8dd8a234d1b628ad9bcf4384",
+    "boundary/src/policy.mjs": "6a609c9835c0ab475a1823622fd47db4698bd326ba2313756e1f927edb3d0532",
+    "boundary/src/runtime.mjs": "8701e9b9f839807a8930c7335bd57a1c0ba119f8f140d6b48c86d06bd15f87c6"
+  },
+  "summary": [
+    {
+      "depth": 0,
+      "build_us": {
+        "camel": 1.542,
+        "boundary": 1.5204999999980373,
+        "paired_speedup_median": 0.9741538461513245,
+        "paired_speedup_range": [
+          0.9250149969979652,
+          1.0411048997053887
+        ],
+        "per_process_medians": {
+          "camel": [
+            1.458,
+            1.583,
+            1.583,
+            1.542,
+            1.542
+          ],
+          "boundary": [
+            1.5000000000000568,
+            1.5204999999980373,
+            1.6250000000042064,
+            1.667000000004748,
+            1.5000000000000568
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 0.6125,
+        "boundary": 0.19169999999988363,
+        "paired_speedup_median": 3.0781249999989724,
+        "paired_speedup_range": [
+          2.8271405492713346,
+          3.3147249190910326
+        ],
+        "per_process_medians": {
+          "camel": [
+            0.55835,
+            0.61455,
+            0.6156250000000001,
+            0.6125,
+            0.60625
+          ],
+          "boundary": [
+            0.19169999999988363,
+            0.18540000000015766,
+            0.2000000000000668,
+            0.21665000000012924,
+            0.18750000000018474
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 13.8125,
+        "boundary": 5.500000000004945,
+        "paired_speedup_median": 2.479346953340863,
+        "paired_speedup_range": [
+          2.3136409736297767,
+          2.690698795181696
+        ],
+        "per_process_medians": {
+          "camel": [
+            13.4795,
+            13.958,
+            13.8955,
+            13.6875,
+            13.8125
+          ],
+          "boundary": [
+            5.437499999999318,
+            5.187499999998124,
+            5.604500000000456,
+            5.916000000002697,
+            5.500000000004945
+          ]
+        }
+      }
+    },
+    {
+      "depth": 1,
+      "build_us": {
+        "camel": 2.459,
+        "boundary": 1.9169999999988363,
+        "paired_speedup_median": 1.2827334376637938,
+        "paired_speedup_range": [
+          1.156904257820721,
+          1.333333333334546
+        ],
+        "per_process_medians": {
+          "camel": [
+            2.459,
+            2.5,
+            2.5,
+            2.459,
+            2.459
+          ],
+          "boundary": [
+            2.1255000000017787,
+            1.8749999999982947,
+            2.0000000000024443,
+            1.8955000000033806,
+            1.9169999999988363
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 1.925,
+        "boundary": 0.20417500000000643,
+        "paired_speedup_median": 9.428186604628086,
+        "paired_speedup_range": [
+          8.51276897611274,
+          10.033655100443001
+        ],
+        "per_process_medians": {
+          "camel": [
+            1.8000250000000002,
+            1.9229500000000002,
+            1.9271,
+            1.925,
+            1.93645
+          ],
+          "boundary": [
+            0.21145000000011294,
+            0.19165000000000987,
+            0.20415000000006955,
+            0.20417500000000643,
+            0.21039999999992176
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 41.0415,
+        "boundary": 6.125000000004377,
+        "paired_speedup_median": 6.723155049554388,
+        "paired_speedup_range": [
+          6.607683634019682,
+          6.929927251439825
+        ],
+        "per_process_medians": {
+          "camel": [
+            41.4375,
+            41.0205,
+            41.5205,
+            41.0415,
+            41.0
+          ],
+          "boundary": [
+            5.979500000002247,
+            6.2080000000008795,
+            6.125000000004377,
+            6.104499999999291,
+            6.145500000002357
+          ]
+        }
+      }
+    },
+    {
+      "depth": 8,
+      "build_us": {
+        "camel": 8.667,
+        "boundary": 4.791999999998353,
+        "paired_speedup_median": 1.7626601586336894,
+        "paired_speedup_range": [
+          1.6694490818035788,
+          1.8830270270267144
+        ],
+        "per_process_medians": {
+          "camel": [
+            8.0,
+            8.709,
+            8.667,
+            8.5835,
+            8.708
+          ],
+          "boundary": [
+            4.791999999998353,
+            4.625000000000767,
+            4.91699999999895,
+            4.7499999999978115,
+            5.0414999999972565
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 10.757275,
+        "boundary": 0.20000000000024443,
+        "paired_speedup_median": 52.19187878789929,
+        "paired_speedup_range": [
+          49.88881159423183,
+          54.30469934314043
+        ],
+        "per_process_medians": {
+          "camel": [
+            10.382275,
+            10.7469,
+            10.764575,
+            10.786449999999999,
+            10.757275
+          ],
+          "boundary": [
+            0.20000000000024443,
+            0.19789999999986208,
+            0.206249999999919,
+            0.19999999999988916,
+            0.21562499999987494
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 220.3965,
+        "boundary": 8.874999999999744,
+        "paired_speedup_median": 24.86619718309931,
+        "paired_speedup_range": [
+          23.142993326983277,
+          25.194224365599865
+        ],
+        "per_process_medians": {
+          "camel": [
+            206.3545,
+            220.6875,
+            221.77100000000002,
+            219.41649999999998,
+            220.3965
+          ],
+          "boundary": [
+            8.916499999997995,
+            8.874999999999744,
+            9.24999999999443,
+            8.708999999999634,
+            8.833500000001493
+          ]
+        }
+      }
+    },
+    {
+      "depth": 32,
+      "build_us": {
+        "camel": 29.916,
+        "boundary": 14.520999999998452,
+        "paired_speedup_median": 2.011035766520736,
+        "paired_speedup_range": [
+          1.9083969465647217,
+          2.1163226353733937
+        ],
+        "per_process_medians": {
+          "camel": [
+            27.75,
+            29.916,
+            30.25,
+            27.875,
+            29.9375
+          ],
+          "boundary": [
+            14.541000000001247,
+            14.500000000001734,
+            15.041999999997557,
+            14.520999999998452,
+            14.146000000003767
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 49.240624999999994,
+        "boundary": 0.20102499999996581,
+        "paired_speedup_median": 246.20312500013642,
+        "paired_speedup_range": [
+          223.84757039321318,
+          252.72565601297669
+        ],
+        "per_process_medians": {
+          "camel": [
+            47.103125000000006,
+            50.804175,
+            48.822900000000004,
+            49.240624999999994,
+            49.2906
+          ],
+          "boundary": [
+            0.21042500000003628,
+            0.20102499999996581,
+            0.2104000000000994,
+            0.19999999999988916,
+            0.1958499999998864
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 994.042,
+        "boundary": 19.458500000002488,
+        "paired_speedup_median": 51.02312614024067,
+        "paired_speedup_range": [
+          47.56817215477285,
+          54.903783754798994
+        ],
+        "per_process_medians": {
+          "camel": [
+            983.3955000000001,
+            1023.7085,
+            992.8335,
+            1006.8755,
+            994.042
+          ],
+          "boundary": [
+            19.833499999997173,
+            18.645499999998094,
+            19.458500000002488,
+            21.16699999999838,
+            18.854000000001037
+          ]
+        }
+      }
+    },
+    {
+      "depth": 128,
+      "build_us": {
+        "camel": 130.83350000000002,
+        "boundary": 56.7705000000025,
+        "paired_speedup_median": 2.2869888410352965,
+        "paired_speedup_range": [
+          1.9377901578458714,
+          2.4927053254437066
+        ],
+        "per_process_medians": {
+          "camel": [
+            129.83350000000002,
+            132.5625,
+            131.64600000000002,
+            130.83350000000002,
+            130.4375
+          ],
+          "boundary": [
+            56.7705000000025,
+            53.645999999996974,
+            52.812500000001705,
+            57.77050000000372,
+            67.31249999999989
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 353.475,
+        "boundary": 0.20419999999994332,
+        "paired_speedup_median": 1753.423454308607,
+        "paired_speedup_range": [
+          1647.134203168871,
+          1811.5815334093338
+        ],
+        "per_process_medians": {
+          "camel": [
+            353.475,
+            370.805225,
+            358.557275,
+            351.088525,
+            353.25
+          ],
+          "boundary": [
+            0.21459999999997592,
+            0.21147500000004982,
+            0.1979249999999766,
+            0.20419999999994332,
+            0.19999999999988916
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 7335.6875,
+        "boundary": 57.00000000000216,
+        "paired_speedup_median": 129.01262876254305,
+        "paired_speedup_range": [
+          111.87750901478377,
+          136.63363740841842
+        ],
+        "per_process_medians": {
+          "camel": [
+            7502.458,
+            7608.854,
+            7335.6875,
+            7120.5,
+            7232.7705000000005
+          ],
+          "boundary": [
+            57.00000000000216,
+            55.68799999999996,
+            59.87449999999939,
+            63.64549999999625,
+            56.06249999999946
+          ]
+        }
+      }
+    },
+    {
+      "depth": 256,
+      "build_us": {
+        "camel": 258.85400000000004,
+        "boundary": 103.16699999999912,
+        "paired_speedup_median": 2.4953473494431573,
+        "paired_speedup_range": [
+          2.3377058155659025,
+          2.533964087993314
+        ],
+        "per_process_medians": {
+          "camel": [
+            258.667,
+            259.52099999999996,
+            257.4375,
+            260.459,
+            258.85400000000004
+          ],
+          "boundary": [
+            102.74999999999679,
+            102.41699999999554,
+            103.16699999999912,
+            111.4165000000007,
+            104.375000000001
+          ]
+        }
+      },
+      "query_us": {
+        "camel": 1181.7531,
+        "boundary": 0.19999999999988916,
+        "paired_speedup_median": 6033.970385497133,
+        "paired_speedup_range": [
+          5303.038487661171,
+          6162.546875003416
+        ],
+        "per_process_medians": {
+          "camel": [
+            1171.5281249999998,
+            1181.7531,
+            1232.509375,
+            1171.17605,
+            1225.777075
+          ],
+          "boundary": [
+            0.19794999999991347,
+            0.19585000000006403,
+            0.19999999999988916,
+            0.22085000000000576,
+            0.19999999999988916
+          ]
+        }
+      },
+      "build_20_queries_us": {
+        "camel": 24637.0625,
+        "boundary": 109.93699999999862,
+        "paired_speedup_median": 224.10164457826127,
+        "paired_speedup_range": [
+          207.80764980910502,
+          235.6869200641978
+        ],
+        "per_process_medians": {
+          "camel": [
+            24253.4585,
+            24399.5835,
+            24637.0625,
+            25201.0415,
+            25184.208
+          ],
+          "boundary": [
+            111.95849999999652,
+            108.87499999999761,
+            109.93699999999862,
+            121.27100000000013,
+            106.85450000000074
+          ]
+        }
+      }
+    }
+  ],
+  "runtimes": {
+    "python": "3.10.12",
+    "node": "v22.14.0"
+  },
+  "boundary_source_identity": "Per-file SHA-256 hashes in source_hashes"
+}

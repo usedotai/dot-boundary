@@ -1,0 +1,204 @@
+{
+  "method": "Tracked executable source bytes under src; .mjs for Boundary, .py for CaMeL. Includes comments/docstrings; excludes declarations, dependencies, tests, docs and interpreter binaries. Dependency counts are direct runtime declarations, not installed or transitive package counts.",
+  "reference_revision": "f083b6b396399d3b3c7f2ddaf613a5945eaf32d8",
+  "rows": [
+    {
+      "name": "Dot Boundary",
+      "source_bytes": 29335,
+      "source_files": 7,
+      "direct_runtime_dependencies": 0,
+      "dependency_declarations": [],
+      "manifest": {
+        "src/cli.mjs": {
+          "bytes": 1841,
+          "sha256": "549ed1b94ad14fca2470bb8011980bec4facd857aee4edea0409cef9ffa70df5"
+        },
+        "src/errors.mjs": {
+          "bytes": 2128,
+          "sha256": "22311cff96a01c699d059b0eb50a2468b77bfc69944969c39d27eea7ea938da2"
+        },
+        "src/gateway.mjs": {
+          "bytes": 8483,
+          "sha256": "a149da327a6be48b38adbfc9f5dcf2f964b379102c20b39c61952dc02ea57db4"
+        },
+        "src/index.mjs": {
+          "bytes": 137,
+          "sha256": "5f6387ee41e0121d2148bf87299e989a1d1d57a8de2ede03011e10261396dd88"
+        },
+        "src/openai.mjs": {
+          "bytes": 6862,
+          "sha256": "9b2fed78f66d4c522d663f16170d21240910032b8dd8a234d1b628ad9bcf4384"
+        },
+        "src/policy.mjs": {
+          "bytes": 1161,
+          "sha256": "6a609c9835c0ab475a1823622fd47db4698bd326ba2313756e1f927edb3d0532"
+        },
+        "src/runtime.mjs": {
+          "bytes": 8723,
+          "sha256": "8701e9b9f839807a8930c7335bd57a1c0ba119f8f140d6b48c86d06bd15f87c6"
+        }
+      }
+    },
+    {
+      "name": "CaMeL",
+      "source_bytes": 320692,
+      "source_files": 33,
+      "direct_runtime_dependencies": 11,
+      "dependency_declarations": [
+        "agentdojo>=0.1.34",
+        "anthropic>=0.51.0",
+        "cyclopts>=3.16.1",
+        "pydantic-ai>=0.2.4",
+        "pydantic>=2.11.4",
+        "tiktoken>=0.9.0",
+        "google-genai>=1.15.0",
+        "openai>=1.78.1",
+        "vertexai>=1.71.1",
+        "jsonref>=1.1.0",
+        "openapi-pydantic>=0.5.1"
+      ],
+      "manifest": {
+        "src/camel/__init__.py": {
+          "bytes": 576,
+          "sha256": "7acc6d5259c7cd412044c9ac5e30f4edebe4ea8f67eda78a8d02ceba301e9111"
+        },
+        "src/camel/capabilities/__init__.py": {
+          "bytes": 950,
+          "sha256": "11d1567103849c8d500805a365d2addbbe765e986cbccadcb5606ef616cf9ae6"
+        },
+        "src/camel/capabilities/capabilities.py": {
+          "bytes": 1296,
+          "sha256": "46a779a6eff0e3e7f35639abe5eff57b2afeee76e8cd02f60f547f56d07ef19f"
+        },
+        "src/camel/capabilities/readers.py": {
+          "bytes": 1416,
+          "sha256": "2a2fa5fac21f22f7904b687e6452209b6cbf8ff339d925f15c0ea829716b1aa0"
+        },
+        "src/camel/capabilities/sources.py": {
+          "bytes": 1238,
+          "sha256": "38ed50f59cb67bf3cad13226e03724e48f0d637a5b2e6569bf95caa9c674aa91"
+        },
+        "src/camel/capabilities/utils.py": {
+          "bytes": 2624,
+          "sha256": "f31b42f30fc83e265f11fcd46dbb559b2aa65310697ceee4c0247112d8e14766"
+        },
+        "src/camel/chat_turn.py": {
+          "bytes": 2156,
+          "sha256": "65e63edf5955214cc7065991862171cfe1542db6f2f1034a5e71982a7a824d63"
+        },
+        "src/camel/conditional_cache.py": {
+          "bytes": 1947,
+          "sha256": "b4056935ccaad83d05075b98c08a189741b36aecaeab6b5585afd02778858e51"
+        },
+        "src/camel/count_tokens.py": {
+          "bytes": 10484,
+          "sha256": "c510d1917cc9a078c461d3f8b503adb6b8be819bf7aa199f182ffde3ca6ed461"
+        },
+        "src/camel/custom_yaml.py": {
+          "bytes": 622,
+          "sha256": "a25a9f68447ee0c3000510587e3f3e5cb456cd049580c4f647d8265ae4e967b2"
+        },
+        "src/camel/interpreter/__init__.py": {
+          "bytes": 575,
+          "sha256": "84328a9f0b961888a87afdcad635aebfea4b73ba3f38a7fbd4e623fea5b2392c"
+        },
+        "src/camel/interpreter/interpreter.py": {
+          "bytes": 100476,
+          "sha256": "a3af5e3f2a3a06e0ae9635214710574b1740d6cab5c8e9d064c0f10bac0b86cb"
+        },
+        "src/camel/interpreter/library.py": {
+          "bytes": 14194,
+          "sha256": "990926c5565c61991b13d8819a047da1a7a9554295f60a73ea69e4cfab75a58d"
+        },
+        "src/camel/interpreter/namespace.py": {
+          "bytes": 1629,
+          "sha256": "39da459f0eafdb60a92ee666d7bacda7b693e0013f924954a9915756f25257ed"
+        },
+        "src/camel/interpreter/op_protocols.py": {
+          "bytes": 3687,
+          "sha256": "47c434f7713aabed73d20a80741f66781ceb2a0405cf581677a97c49221e3c83"
+        },
+        "src/camel/interpreter/result.py": {
+          "bytes": 874,
+          "sha256": "ee5dc7682f4ce7e3815bcc7113b275f9209af31c2b1b3bcc1c82b255f93c4b41"
+        },
+        "src/camel/interpreter/value.py": {
+          "bytes": 52169,
+          "sha256": "5794214f0da39816324f5a76093d3fb3594f13aa502dade74d7473206af5ef19"
+        },
+        "src/camel/models.py": {
+          "bytes": 8697,
+          "sha256": "91afc7072a4aab0b0b1c3e3495e5ce68ed4598fd2d0e544216f916635548ffe1"
+        },
+        "src/camel/pipeline_elements/__init__.py": {
+          "bytes": 619,
+          "sha256": "1360e1f84be2e819615d2f987182d90e000148d16b9df53aded65fecfb503023"
+        },
+        "src/camel/pipeline_elements/agentdojo_function.py": {
+          "bytes": 12913,
+          "sha256": "989e5fa3eba252a2a625dd08c833f4d333c0823fcebec5bcf7874cb3e754292d"
+        },
+        "src/camel/pipeline_elements/anthropic_tool_filter.py": {
+          "bytes": 3070,
+          "sha256": "1528569a046994f48c2f31d46e57acd8b4a16fb8445eeaf3e07f4f8df438b552"
+        },
+        "src/camel/pipeline_elements/old_google_llm.py": {
+          "bytes": 10698,
+          "sha256": "b7899d7fce998180e4d959780017774817671a14604054338b4638556ba71346"
+        },
+        "src/camel/pipeline_elements/privileged_llm.py": {
+          "bytes": 18806,
+          "sha256": "848982dc88dea51f15b454f119a8d775f76449ccddd892a208599c5899d58d75"
+        },
+        "src/camel/pipeline_elements/replay_privileged_llm.py": {
+          "bytes": 14528,
+          "sha256": "1e2dcafc237434bada4d57de1d3d8dc22e9e877b81dac451578ed7721cac61a5"
+        },
+        "src/camel/pipeline_elements/security_policies/__init__.py": {
+          "bytes": 1102,
+          "sha256": "6ab8a1b26af5fe915ac9e8323fdbc1fa3f2f301e0ee30f0d4030882660fc9136"
+        },
+        "src/camel/pipeline_elements/security_policies/agentdojo_security_policies.py": {
+          "bytes": 2002,
+          "sha256": "186f4f674ee2c06068df2d6cbfb9061f247d4501b5f0f10b2ddae4f26174b67d"
+        },
+        "src/camel/pipeline_elements/security_policies/banking.py": {
+          "bytes": 5090,
+          "sha256": "bfce5b74684ee3d25c8c843b761042329fc755bdeeca62551cead8d6a7313ebc"
+        },
+        "src/camel/pipeline_elements/security_policies/slack.py": {
+          "bytes": 4116,
+          "sha256": "5dba7d012d4c929cf464a7045a2f179f020206432b9e7f58a565929aa7bd5488"
+        },
+        "src/camel/pipeline_elements/security_policies/travel.py": {
+          "bytes": 6193,
+          "sha256": "871a1da8e9fa3c76bb155ce5bf9fb96aedc318760245a833b752d8611a506b34"
+        },
+        "src/camel/pipeline_elements/security_policies/workspace.py": {
+          "bytes": 12043,
+          "sha256": "d51428deb08ffbb242b0fbc4aaf6a082b3ac7c9a5434a490025aa6de6ab3f541"
+        },
+        "src/camel/quarantined_llm.py": {
+          "bytes": 4934,
+          "sha256": "95e62fca524fb18e830f00e95df7c68168fe0b8df2acb2785c4e775cbb1a8b42"
+        },
+        "src/camel/security_policy.py": {
+          "bytes": 3318,
+          "sha256": "e7a060e0192314613494d7a24ca660a39ddf5bdf0f0cc6300fb9bf3cd4dd5b65"
+        },
+        "src/camel/system_prompt_generator.py": {
+          "bytes": 15650,
+          "sha256": "88451b16e6893599a8883de5e53b5fa0349ab16c719991b56fb06163a18e2f4b"
+        }
+      }
+    }
+  ],
+  "boundary_release": {
+    "version": "0.1.0",
+    "archive_bytes": 20436,
+    "unpacked_bytes": 62216,
+    "files": 19,
+    "sha256": "4da379f81ba22a639224e4f8f773784f3849c0dcaa2f04267ef06fa3adcd9fbc",
+    "url": "https://github.com/usedotai/dot-boundary/releases/download/v0.1.0/usedot-boundary-0.1.0.tgz"
+  }
+}

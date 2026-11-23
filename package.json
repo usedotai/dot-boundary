@@ -1,0 +1,50 @@
+{
+  "name": "@usedot/boundary",
+  "version": "0.1.0",
+  "description": "Provenance-enforced information flow for multi-provider AI workflows.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    },
+    "./gateway": {
+      "types": "./src/gateway.d.ts",
+      "import": "./src/gateway.mjs"
+    }
+  },
+  "bin": {
+    "dot-boundary": "./src/cli.mjs"
+  },
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "bench": "node benchmarks/run.mjs",
+    "charts": "node benchmarks/charts.mjs && node benchmarks/reference/chart.mjs && node benchmarks/reference/footprint-chart.mjs",
+    "demo": "node examples/offline.mjs",
+    "verify": "npm test && npm run typecheck && npm run demo && npm run bench && npm run charts && npm run evidence",
+    "start": "node src/cli.mjs serve examples/gateway.json",
+    "typecheck": "tsc --noEmit --strict --module NodeNext --target ES2022 test/types.ts --types node",
+    "evidence": "node benchmarks/check.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usedotai/dot-boundary.git"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "openai": "7.62.0",
+    "typescript": "6.0.3"
+  }
+}
